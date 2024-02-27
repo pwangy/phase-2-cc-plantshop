@@ -1,18 +1,15 @@
-import React from "react";
+const PlantCard = () => {
+	return (
+		<li className='card' data-testid='plant-item'>
+			<img src={'https://via.placeholder.com/400'} alt={'plant name'} />
+			<h4>{'plant name'}</h4>
+			<p>Price: {'plant price'}</p>
+			{true ? (
+				<button className='primary'>In Stock</button>
+			) : (
+				<button>Out of Stock</button>
+			)}
+		</li>
+)}
 
-function PlantCard() {
-  return (
-    <li className="card" data-testid="plant-item">
-      <img src={"https://via.placeholder.com/400"} alt={"plant name"} />
-      <h4>{"plant name"}</h4>
-      <p>Price: {"plant price"}</p>
-      {true ? (
-        <button className="primary">In Stock</button>
-      ) : (
-        <button>Out of Stock</button>
-      )}
-    </li>
-  );
-}
-
-export default PlantCard;
+export default PlantCard
