@@ -1,8 +1,9 @@
 import PlantCard from './PlantCard'
 
-const PlantList = () => {
+const PlantList = ({ plants }) => {
+  const renderPlants = plants.map(p => <PlantCard key={p.id} {...p} />)
 	return (
-		<ul className='cards'>{/* render PlantCards components in here */}</ul>
+		<ul className='cards'>{renderPlants}</ul>
 )}
 
 export default PlantList
