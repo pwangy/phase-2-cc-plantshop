@@ -10,28 +10,6 @@ const App = () => {
 )}
 
 export default App
-//! Core Deliverables
-// can add a new plant to the page by submitting the form.
-// can search for plants by their name and see a filtered list of plants.
-// POST /plants
-// Required Headers:
-// {
-//   "Content-Type": "application/json"
-// }
-// Request Object:
-// {
-//   "name": "string",
-//   "image": "string",
-//   "price": number
-// }
-// Example Response:
-// {
-//   "id": 1,
-//   "name": "Aloe",
-//   "image": "./images/aloe.jpg",
-//   "price": 15.99
-// }
-
 //! Advanced Deliverables
 // These deliverables are not required to pass the code challenge, but if you have the extra time, or even after the code challenge, they are a great way to stretch your skills.
 

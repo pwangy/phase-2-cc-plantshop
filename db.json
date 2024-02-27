@@ -40,7 +40,21 @@
       "id": 7,
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
-      "price": 55
+      "price": 55555555
+    },
+    {
+      "name": "bloomie",
+      "image": "./images/monstera.jpg",
+      "price": "346",
+      "sold": false,
+      "id": 8
+    },
+    {
+      "name": "planty",
+      "image": "./images/pothos.jpg",
+      "price": "666",
+      "sold": false,
+      "id": 9
     }
   ]
 }
