@@ -1,14 +1,20 @@
+import { useState } from 'react'
+
 const PlantCard = ({ id, name, image, price }) => {
+  const [sold, setSold] = useState(false) //defaults to show all plants in stock
+
+  const toggleStock = () => {
+    setSold(sold => !sold)
+  }
+
 	return (
-		<li className='card' data-testid='plant-item'>
+		<li className='card' data-testid='plant-item' id={id}>
 			<img src={image} alt={name} />
 			<h4>{name}</h4>
 			<p>Price: {price}</p>
-			{true ? (
-				<button className='primary'>In Stock</button>
-			) : (
-				<button>Out of Stock</button>
-			)}
+			{sold === false 
+      ? (<button className='primary' onClick={toggleStock}>In Stock</button>) 
+      : (<button onClick={toggleStock}>Out of Stock</button>)}
 		</li>
 )}
 

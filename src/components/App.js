@@ -12,26 +12,7 @@ const App = () => {
 export default App
 //! Core Deliverables
 // can add a new plant to the page by submitting the form.
-// can mark a plant as "sold out".
 // can search for plants by their name and see a filtered list of plants.
-
-// Endpoints for Core Deliverables
-// GET /plants
-// Example Response:
-// [
-//   {
-//     "id": 1,
-//     "name": "Aloe",
-//     "image": "./images/aloe.jpg",
-//     "price": 15.99
-//   },
-//   {
-//     "id": 2,
-//     "name": "ZZ Plant",
-//     "image": "./images/zz-plant.jpg",
-//     "price": 25.98
-//   }
-// ]
 // POST /plants
 // Required Headers:
 // {
