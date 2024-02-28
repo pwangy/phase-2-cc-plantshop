@@ -8,7 +8,7 @@ const PlantCard = ({ id, name, image, price }) => {
   }
 
 	return (
-		<li className='card' data-testid='plant-item' id={id}>
+		<li className='card' data-testid='plant-item'>
 			<img src={image} alt={name} />
 			<h4>{name}</h4>
 			<p>Price: {price}</p>

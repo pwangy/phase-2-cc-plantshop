@@ -1,18 +1,16 @@
 import { useState } from 'react'
-import { object, string, number, boolean } from 'yup'
+import { object, string, number } from 'yup'
 
 const initialState = {
   name: '',
   image: '',
-  price: '',
-  sold: false
+  price: ''
 }
 
 const plantSchema = object().shape({
   name: string().required('Plant name is required'),
   image: string().required('Image url is required'),
-  price: number().positive().required('Price is required'),
-  sold: boolean()
+  price: number().positive().required('Price is required')
 })
 
 const NewPlantForm = ({ plantAPI, handleAddPlant }) => {
@@ -35,7 +33,7 @@ const NewPlantForm = ({ plantAPI, handleAddPlant }) => {
         fetch(plantAPI, { //contact server
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'Application/JSON'
           },
           body: JSON.stringify(formData)
     })

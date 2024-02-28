@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { v4 as uuid } from 'uuid'
+// import { v4 as uuid } from 'uuid'
 import NewPlantForm from './NewPlantForm'
 import PlantList from './PlantList'
 import Search from './Search'
@@ -8,7 +8,7 @@ const PlantPage = () => {
   const[error, setError] = useState('')
   const [plants, setPlants] = useState([])
   const [searchValue, setSearchValue] = useState('')
-  const plantAPI = 'http://localhost:6001/plants/'
+  const plantAPI = 'http://localhost:6001/plants'
   
   useEffect(() => { // GET plants
     fetch(plantAPI)
@@ -30,16 +30,18 @@ const PlantPage = () => {
   const handleAddPlant = newPlant => {
     setPlants(currentPlants => {
       const lastPlantArray = currentPlants.slice(-1)
-      const id = lastPlantArray.length ? Number(lastPlantArray[0] +1) : uuid()
+      const id = lastPlantArray.length 
+        ? Number(lastPlantArray[0] + 1) 
+        : null
       return [...currentPlants, {...newPlant, id}]
     })
   }
 
-	return (
+	return ( //consider moving onSearchValue
 		<main>
       {error ? <p className="err">{error}</p> : null}
 			<NewPlantForm plantAPI={plantAPI} handleAddPlant={handleAddPlant}/>
-      <Search searchValue={searchValue} onSearchChange={setSearchValue} />
+      <Search searchValue={searchValue} onSearchChange={setSearchValue} /> 
 			<PlantList plants={plantsToDisplay} />
 		</main>
 )}

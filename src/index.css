@@ -55,6 +55,7 @@ main {
 
 .err {
   background-color: lightpink;
+  padding: 0.25rem 1rem;  
 }
 
 .new-plant-form {
