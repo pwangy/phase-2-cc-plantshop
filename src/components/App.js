@@ -9,7 +9,6 @@ const App = () => {
 		</div>
 )}
 
-export default App
 //! Advanced Deliverables
 // These deliverables are not required to pass the code challenge, but if you have the extra time, or even after the code challenge, they are a great way to stretch your skills.
 
@@ -41,3 +40,5 @@ export default App
 // DELETE /plants/:id
 // Example Response:
 // {}
+
+export default App

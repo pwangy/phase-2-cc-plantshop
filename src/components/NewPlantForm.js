@@ -43,7 +43,7 @@ const NewPlantForm = ({ plantAPI, handleAddPlant }) => {
         }
         setFormData(initialState)
       })
-      .catch(error => setError(error.text)) //maybe display onscreen
+      .catch(error => setError(error.text))
     .catch(validationError => setError(validationError.message))
   }
 

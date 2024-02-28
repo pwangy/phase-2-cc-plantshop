@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-// import { v4 as uuid } from 'uuid'
+import { v4 as uuid } from 'uuid'
 import NewPlantForm from './NewPlantForm'
 import PlantList from './PlantList'
 import Search from './Search'
@@ -12,14 +12,8 @@ const PlantPage = () => {
   
   useEffect(() => { // GET plants
     fetch(plantAPI)
-      .then(res => {
-        if (!res.ok) {
-          throw new Error ('Server cannot be reached')
-        }
-        return res.json()
-      })
+      .then(res => res.json())
       .then(plantData => setPlants(plantData))
-      // .catch(err => alert(err.message)) //make this an on-screen div
       .catch(error => setError(error.message))
   }, [])
 
@@ -29,18 +23,15 @@ const PlantPage = () => {
 
   const handleAddPlant = newPlant => {
     setPlants(currentPlants => {
-      const lastPlantArray = currentPlants.slice(-1)
-      const id = lastPlantArray.length 
-        ? Number(lastPlantArray[0] + 1) 
-        : null
+      const id = uuid()
       return [...currentPlants, {...newPlant, id}]
     })
   }
 
-	return ( //consider moving onSearchValue
+	return (
 		<main>
-      {error ? <p className="err">{error}</p> : null}
-			<NewPlantForm plantAPI={plantAPI} handleAddPlant={handleAddPlant}/>
+      {error ? <p className="err">{error}</p> : uuid}
+			<NewPlantForm plantAPI={plantAPI} handleAddPlant={handleAddPlant} />
       <Search searchValue={searchValue} onSearchChange={setSearchValue} /> 
 			<PlantList plants={plantsToDisplay} />
 		</main>
