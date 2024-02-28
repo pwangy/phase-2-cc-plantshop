@@ -7,14 +7,17 @@ const PlantCard = ({ id, name, image, price }) => {
     setSold(sold => !sold)
   }
 
+  const stockStatus = sold === false ? (<button className='primary' onClick={toggleStock}>In Stock</button>) : (<button onClick={toggleStock}>Out of Stock</button>)
+
 	return (
 		<li className='card' data-testid='plant-item'>
 			<img src={image} alt={name} />
 			<h4>{name}</h4>
 			<p>Price: {price}</p>
-			{sold === false 
-      ? (<button className='primary' onClick={toggleStock}>In Stock</button>) 
-      : (<button onClick={toggleStock}>Out of Stock</button>)}
+			<div id='button-row'>
+				{stockStatus}
+				<button name='delete' label='delete' onClick=''>x</button>
+			</div>
 		</li>
 )}
 

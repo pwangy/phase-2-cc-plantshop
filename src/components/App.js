@@ -14,9 +14,6 @@ const App = () => {
 
 // You'll have to add additional elements for these features. Feel free to style them however you see fit!
 
-// Note: If you are going to attempt these advanced deliverables, please be sure to have a working commit with all the Core Deliverables first!
-
-// User can
 // update the price of a plant and still see the updated price after refreshing the page.
 // delete a plant and it is still gone when I refresh the page.
 
